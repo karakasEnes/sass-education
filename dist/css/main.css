@@ -28,12 +28,16 @@ body {
   margin: 0 auto;
 }
 
-.main .main__parag {
+.main .main__parag1 {
   font-weight: 400;
 }
 
-.main .main__parag:hover {
+.main .main__parag1:hover {
   color: pink;
+}
+
+.main .main__parag2:hover {
+  color: #b0fa7b;
 }
 
 @media (max-width: 800px) {

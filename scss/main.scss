@@ -35,11 +35,19 @@ body {
   width: 77%;
   margin: 0 auto;
 
-  #{&}__parag {
+  #{&}__parag1 {
     font-weight: weightFunction(regular);
 
     &:hover {
       color: pink;
+    }
+  }
+
+  #{&}__parag2 {
+    @extend .main__parag2;
+
+    &:hover {
+      color: $accent-color;
     }
   }
 
