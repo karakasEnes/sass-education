@@ -1,0 +1,53 @@
+@import './resets';
+@import './variables';
+
+@function weightFunction($weight-name) {
+  @return map-get($map: $font-weights, $key: $weight-name);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin ourCustomTheme($ligth-theme: true) {
+  @if $ligth-theme {
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
+
+@mixin mobileMixin {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+body {
+  background: $primary-color;
+  color: $text-color;
+}
+
+.main {
+  @include flexCenter(row);
+  width: 77%;
+  margin: 0 auto;
+
+  #{&}__parag {
+    font-weight: weightFunction(regular);
+
+    &:hover {
+      color: pink;
+    }
+  }
+
+  @include mobileMixin() {
+    flex-direction: column;
+  }
+}
+
+.light {
+  @include ourCustomTheme(false);
+}
